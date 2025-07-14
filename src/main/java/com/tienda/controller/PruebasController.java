@@ -83,5 +83,16 @@ public class PruebasController {
         model.addAttribute("precioSup", precioSup);
         return "/pruebas/listado2";
     }
-
+    
+    // Tarea 4
+    @PostMapping("/query4")
+    public String consultaQuery4(@RequestParam(value = "precioInf") double precioInf,
+            @RequestParam(value = "precioSup") double precioSup, Model model) {
+        var productos = productoService.metodoJPQL(precioInf, precioSup);
+        model.addAttribute("productos", productos);
+        model.addAttribute("totalProductos", productos.size());
+        model.addAttribute("precioInf", precioInf);
+        model.addAttribute("precioSup", precioSup);
+        return "/pruebas/listado2";
+    }
 }

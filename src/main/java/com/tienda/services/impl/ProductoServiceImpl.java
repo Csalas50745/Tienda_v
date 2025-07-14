@@ -62,5 +62,11 @@ public class ProductoServiceImpl implements ProductoService {
         return productoDao.metodoNativo(precioInf, precioSup);
     }
     
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> metodoUsado(double precioInf, double precioSup) {
+        return productoDao.metodoJPQL(precioInf, precioSup);
+    }
+    
     
 }

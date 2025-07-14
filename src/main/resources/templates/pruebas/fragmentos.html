@@ -155,7 +155,36 @@
                         </div>
                     </form>
                 </div>
-            </div>
+
+                // Tarea 4
+
+                <div class="d-flex justify-content-center my-4">
+                    <form method="POST" th:action="@{/pruebas/query4}" class="was-validated" 
+                          style="background: #f8f9fa; border: 2px dashed #6c757d; border-radius: 12px; padding: 20px; width: 320px;">
+
+                        <h5 class="text-center mb-3" style="color: #6f42c1;">Consulta de Precio</h5>
+
+                        <div class="mb-3">
+                            <label for="precioInf" class="form-label">[[#{pruebas.precio.inferior}]]</label>
+                            <input type="number" class="form-control border-secondary" 
+                                   th:value="${precioInf}" th:name="precioInf" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="precioSup" class="form-label">[[#{pruebas.precio.superior}]]</label>
+                            <input type="number" class="form-control border-secondary"
+                                   th:value="${precioSup}" th:name="precioSup" required />
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn text-white" style="background-color: #6f42c1;">
+                                <i class="fas fa-search"></i> Consultar Rango
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+
         </section>
 
     </body>
